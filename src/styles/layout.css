@@ -1,0 +1,47 @@
+.layout {
+  border: 2px solid rgb(154, 171, 202);
+}
+.main-display {
+  display: flex;
+}
+
+.navbar {
+  width: 20vw;
+  height: 100vh;
+}
+
+.contents-areas {
+  display: flex;
+  width: 80vw;
+}
+
+.profile {
+  width: 200px;
+  height: 200px;
+}
+
+.members {
+  height: 270px;
+}
+
+.schedule {
+  width: 850px;
+  height: 190px;
+}
+
+.right-bottom-area {
+  display: flex;
+}
+
+.todo-list {
+  width: 350px;
+  height: 200px;
+}
+
+.dayoff-management {
+  height: 100px;
+}
+
+.dayoff-approval {
+  height: 100px;
+}
