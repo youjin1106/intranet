@@ -1,7 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Notice from "./pages/Notice";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Mypage from "./pages/Mypage";
+import Notice from "./pages/Notice";
 import Navbar from "./components/navbar/Navbar";
 
 function App() {
