@@ -1,4 +1,8 @@
 const Notice = () => {
-  return <h1 className="text-3xl font-bold underline">비트테스트 해보는중</h1>;
+  return (
+    <div className="layout main-display">
+      <h1>공지</h1>
+    </div>
+  );
 };
 export default Notice;
