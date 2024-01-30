@@ -5,8 +5,20 @@ export default {
     fontSize: {
       s: ["14px", "16px"],
       md: ["16px", "24px"],
-      mdBold: ["16px", "24px"],
-      xBold: ["40px", "48px"],
+      mdBold: [
+        "16px",
+        {
+          lineHeight: "24px",
+          fontWeight: "700",
+        },
+      ],
+      xBold: [
+        "40px",
+        {
+          lineHeight: "48px",
+          fontWeight: "700",
+        },
+      ],
       lg: ["20px", "24px"],
       titleLg: ["32px", "40px"],
       titleMd: ["24px", "32px"],
