@@ -1,3 +1,7 @@
+import PrimaryButton from "../components/buttons/PrimaryButton";
+import IconButton from "../components/buttons/IconButton";
+import GrayButton from "../components/buttons/GrayButton";
+
 const Mypage = () => {
   return (
     <div className="layout">
@@ -11,7 +15,12 @@ const Mypage = () => {
         <div className="layout right-contents-area">
           <div className="layout schedule">근무관리</div>
           <div className="layout right-bottom-area">
-            <div className="layout todo-list">할 일 목록</div>
+            <div className="layout todo-list">할 일 목록
+              <PrimaryButton label="프라이머리 md" size="md"/>
+              <PrimaryButton label="프라이머리 lg" size="lg"/>
+              <IconButton iconName="delete" />
+              <GrayButton label="그레이버튼"/>
+            </div>
             <div className="layout dayoff-areas">
               <div className="layout dayoff-management">연차 관리</div>
               <div className="layout dayoff-approval">연차 신청 내역</div>
