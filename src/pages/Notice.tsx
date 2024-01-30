@@ -2,7 +2,7 @@ const Notice = () => {
   return (
     <>
       <h1 className="text-3xl text-primary font-bold underline decoration-border">
-        비트테스트 해보는중
+        테스트 해보는중
       </h1>
       <p className="text-s">s</p>
       <p className="text-lg">lg</p>
