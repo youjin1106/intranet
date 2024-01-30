@@ -1,4 +1,13 @@
 const Notice = () => {
+  // fetch("/user", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({ title: "React", author: "Facebook" }),
+  // })
+  //   .then((response) => response.json())
+  //   .then((json) => console.log(json));
   return (
     <div className="bg-bg00 flex-1 p-[24px]">
       <div className="bg-bg01 p-[16px] text-titleLg rounded mb-[12px]">
