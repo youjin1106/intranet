@@ -2,6 +2,8 @@ import PrimaryButton from "../components/buttons/PrimaryButton";
 import IconButton from "../components/buttons/IconButton";
 import GrayButton from "../components/buttons/GrayButton";
 import Header from '../components/header/Header';
+import NoticeSlide from '../components/mypage/notice-slide/NoticeSlide';
+import Profile from '../components/mypage/profile/Profile';
 
 const Mypage = () => {
   return (
@@ -9,10 +11,14 @@ const Mypage = () => {
       <div className="layout header rounded">
         <Header label={'마이페이지'} />
       </div>
-      <div className="layout">미니 공지사항</div>
+      <div className="layout rounded">
+        <NoticeSlide />
+      </div>
       <div className="layout contents-areas">
         <div className="layout left-contents-area">
-          <div className="layout profile">프로필</div>
+          <div className="layout profile rounded">
+            <Profile />
+          </div>
           <div className="layout members">멤버목록</div>
         </div>
         <div className="layout right-contents-area">
