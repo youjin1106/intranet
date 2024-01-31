@@ -1,11 +1,14 @@
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import IconButton from "../components/buttons/IconButton";
 import GrayButton from "../components/buttons/GrayButton";
+import Header from '../components/header/Header';
 
 const Mypage = () => {
   return (
     <div className="layout">
-      <div className="layout">페이지 제목</div>
+      <div className="layout header rounded">
+        <Header label={'마이페이지'} />
+      </div>
       <div className="layout">미니 공지사항</div>
       <div className="layout contents-areas">
         <div className="layout left-contents-area">
