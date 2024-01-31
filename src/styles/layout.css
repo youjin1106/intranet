@@ -10,6 +10,10 @@
   height: 100vh;
 }
 
+.header {
+  height: 72px;
+}
+
 .contents-areas {
   display: flex;
   width: 80vw;
