@@ -4,7 +4,7 @@ type GrayButtonProps = {
 
 const GrayButton:React.FC<GrayButtonProps> = ({label}) => {
   return (
-    <button>{label}</button>
+    <button className="text-gray01 text-mdBold px-4 py-1 bg-[#E4E4E4] hover:bg-[#CECACA] hover:text-gray00 rounded inline-flex">{label}</button>
   )  
 }
 

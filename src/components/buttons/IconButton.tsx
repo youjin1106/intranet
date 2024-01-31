@@ -4,8 +4,8 @@ type IconButtonProps = {
 
 const IconButton:React.FC<IconButtonProps> = ({iconName}) => {
   return (
-    <button>
-      <span className="material-symbols-outlined">{iconName}</span>
+    <button className="p-1.5 h-8 rounded group hover:bg-[#E4E4E4]">
+      <span className="material-symbols-outlined text-lg leading-5 text-gray01 inline-flex">{iconName}</span>
     </button>
   )
 }
