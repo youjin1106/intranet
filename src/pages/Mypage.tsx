@@ -1,7 +1,8 @@
-import PrimaryButton from "../components/buttons/PrimaryButton";
-import IconButton from "../components/buttons/IconButton";
-import GrayButton from "../components/buttons/GrayButton";
-import SelectBox from "../components/inputs/SelectBox";
+import GrayButton from '../components/buttons/GrayButton';
+import IconButton from '../components/buttons/IconButton';
+import PrimaryButton from '../components/buttons/PrimaryButton';
+import SelectBox from '../components/inputs/SelectBox';
+import { ProfileImage } from '../components/profile/ProfileImage';
 
 const Mypage = () => {
   return (
@@ -11,18 +12,26 @@ const Mypage = () => {
       <div className="layout contents-areas">
         <div className="layout left-contents-area">
           <div className="layout profile">프로필</div>
-          <div className="layout members">멤버목록</div>
+          <div className="layout members">
+            멤버목록
+            <ProfileImage size="lg" isOnline={true} />
+            <ProfileImage />
+          </div>
         </div>
         <div className="layout right-contents-area">
           <div className="layout schedule">근무관리</div>
           <div className="layout right-bottom-area">
-            <div className="layout todo-list">할 일 목록
-              <PrimaryButton label="프라이머리 md" size="md"/>
-              <PrimaryButton label="프라이머리 lg" size="lg"/>
+            <div className="layout todo-list">
+              할 일 목록
+              <PrimaryButton label="프라이머리 md" size="md" />
+              <PrimaryButton label="프라이머리 lg" size="lg" />
               <IconButton iconName="delete" />
-              <GrayButton label="그레이버튼"/>
-              <SelectBox options={["aa", "bb", "cc"]} size="md"/>
-              <SelectBox options={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]} size="lg"/>
+              <GrayButton label="그레이버튼" />
+              <SelectBox options={["aa", "bb", "cc"]} size="md" />
+              <SelectBox
+                options={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+                size="lg"
+              />
             </div>
             <div className="layout dayoff-areas">
               <div className="layout dayoff-management">연차 관리</div>
