@@ -5,6 +5,8 @@ import {
 
 import Pagination from '@mui/material/Pagination';
 
+import { NoticeTitle } from '../components/notice/Title';
+
 type NoticeModel = {
   id: string;
   title: string;
@@ -35,13 +37,7 @@ const Notice = () => {
           </div>
 
           {noticeLists.map((it) => (
-            <div
-              key={it.id}
-              className="border-b border-border border-solid px-3 py-3 flex justify-between"
-            >
-              <span className="text-mdBold">{it.title}</span>
-              <span className="text-gray01 ">{it.date}</span>
-            </div>
+            <NoticeTitle title={it.title} date={it.date} key={it.id} />
           ))}
         </div>
         <div className="flex justify-center">
