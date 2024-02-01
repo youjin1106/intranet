@@ -4,6 +4,7 @@ const Notice = () => {
       return res.json;
     })
     .then((data) => console.log(data));
+
   return (
     <div className="bg-bg00 flex-1 p-[24px]">
       <div className="bg-bg01 p-[16px] text-titleLg rounded mb-[12px]">
