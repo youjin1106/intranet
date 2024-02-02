@@ -1,8 +1,9 @@
-import PrimaryButton from "../components/buttons/PrimaryButton";
-import IconButton from "../components/buttons/IconButton";
 import GrayButton from "../components/buttons/GrayButton";
+import IconButton from "../components/buttons/IconButton";
+import PrimaryButton from "../components/buttons/PrimaryButton";
 import SelectBox from "../components/inputs/SelectBox";
 import Timeline from "../components/mypage/schedule/Timeline";
+import { ProfileImage } from "../components/profile/ProfileImage";
 
 const Mypage = () => {
   return (
@@ -12,7 +13,11 @@ const Mypage = () => {
       <div className="layout contents-areas">
         <div className="layout left-contents-area">
           <div className="layout profile">프로필</div>
-          <div className="layout members">멤버목록</div>
+          <div className="layout members">
+            멤버목록
+            <ProfileImage size="lg" isOnline={true} />
+            <ProfileImage />
+          </div>
         </div>
         <div className="layout right-contents-area">
           <div className="layout schedule">
