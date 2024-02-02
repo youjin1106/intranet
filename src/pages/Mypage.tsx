@@ -1,8 +1,8 @@
-import GrayButton from '../components/buttons/GrayButton';
-import IconButton from '../components/buttons/IconButton';
-import PrimaryButton from '../components/buttons/PrimaryButton';
-import SelectBox from '../components/inputs/SelectBox';
-import { ProfileImage } from '../components/profile/ProfileImage';
+import GrayButton from "../components/buttons/GrayButton";
+import IconButton from "../components/buttons/IconButton";
+import PrimaryButton from "../components/buttons/PrimaryButton";
+import SelectBox from "../components/inputs/SelectBox";
+import { ProfileImage } from "../components/profile/ProfileImage";
 
 const Mypage = () => {
   return (
