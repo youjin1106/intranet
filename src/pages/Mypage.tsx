@@ -1,8 +1,5 @@
-import GrayButton from '../components/buttons/GrayButton';
-import IconButton from '../components/buttons/IconButton';
-import PrimaryButton from '../components/buttons/PrimaryButton';
-import SelectBox from '../components/inputs/SelectBox';
-import { ProfileImage } from '../components/profile/ProfileImage';
+import TodoList from "../components/mypage/todolist/TodoList";
+import { ProfileImage } from "../components/profile/ProfileImage";
 
 const Mypage = () => {
   return (
@@ -23,15 +20,7 @@ const Mypage = () => {
           <div className="layout right-bottom-area">
             <div className="layout todo-list">
               할 일 목록
-              <PrimaryButton label="프라이머리 md" size="md" />
-              <PrimaryButton label="프라이머리 lg" size="lg" />
-              <IconButton iconName="delete" />
-              <GrayButton label="그레이버튼" />
-              <SelectBox options={["aa", "bb", "cc"]} size="md" />
-              <SelectBox
-                options={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
-                size="lg"
-              />
+              <TodoList />
             </div>
             <div className="layout dayoff-areas">
               <div className="layout dayoff-management">연차 관리</div>
