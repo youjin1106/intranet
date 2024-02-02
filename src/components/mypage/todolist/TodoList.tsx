@@ -1,9 +1,15 @@
-import { useEffect } from "react";
-import { useAtom } from "jotai";
-import { todoListAtom, errorAtom, addToDoValue } from "./atoms";
-import InputBox from "../../login/InputBox";
-import PrimaryButton from "../../buttons/PrimaryButton";
-import TodoItem from "./TodoItem";
+import { useEffect } from 'react';
+
+import { useAtom } from 'jotai';
+
+import PrimaryButton from '../../buttons/PrimaryButton';
+import InputBox from '../../login/InputBox';
+import {
+  addToDoValue,
+  errorAtom,
+  todoListAtom,
+} from './atoms';
+import TodoItem from './TodoItem';
 
 type TodoData = {
   id: string;
