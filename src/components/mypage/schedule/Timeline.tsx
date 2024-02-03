@@ -1,9 +1,11 @@
+import { ApexOptions } from "apexcharts";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import Toggle from "./Toggle";
 type Chart = {
   series: Array<WorkState>;
-  options: unknown;
+  options: ApexOptions;
 };
 
 type WorkState = {
@@ -75,9 +77,9 @@ const Timeline = () => {
   };
 
   const getTest = async (id: string) => {
-    const response = await fetch(
-      `http://localhost:3001/schedules-test/${id}`
-    ).then((res) => res.json());
+    const response = await fetch(`http://localhost:3001/schedules/${id}`).then(
+      (res) => res.json()
+    );
     return response;
   };
   const [chart, setChart] = useState(state);
@@ -112,7 +114,15 @@ const Timeline = () => {
   // getSchedule();
 
   return (
-    <div>
+    <>
+      <div className="flex flex-row">
+        <div className="text-titleMd text-gray00">근무 관리</div>
+        <Toggle />
+        <div className="working flex flex-col">
+          <span className="text-primary text-sm font-bold ">근무 중</span>
+          <span className="text-gray01 text-[12px]">5:16:34</span>
+        </div>
+      </div>
       <div id="chart">
         <ReactApexChart
           options={state.options}
@@ -121,7 +131,7 @@ const Timeline = () => {
           height={220}
         />
       </div>
-    </div>
+    </>
   );
 };
 

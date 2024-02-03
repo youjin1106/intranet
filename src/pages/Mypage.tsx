@@ -1,3 +1,4 @@
+import Timeline from "../components/mypage/schedule/Timeline";
 import TodoList from "../components/mypage/todolist/TodoList";
 import { ProfileImage } from "../components/profile/ProfileImage";
 
