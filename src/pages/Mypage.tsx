@@ -1,18 +1,20 @@
-import TodoList from "../components/mypage/todolist/TodoList";
-import { ProfileImage } from "../components/profile/ProfileImage";
+import { Members } from '../components/mypage/members/Members';
+import TodoList from '../components/mypage/todolist/TodoList';
+import { ProfileImage } from '../components/profile/ProfileImage';
 
 const Mypage = () => {
   return (
-    <div className="layout">
+    <div className="layout bg-bg00 p-4">
       <div className="layout">페이지 제목</div>
       <div className="layout">미니 공지사항</div>
       <div className="layout contents-areas">
         <div className="layout left-contents-area">
-          <div className="layout profile">프로필</div>
-          <div className="layout members">
-            멤버목록
+          <div className="layout profile">
+            프로필
             <ProfileImage size="lg" isOnline={true} />
-            <ProfileImage />
+          </div>
+          <div className="">
+            <Members />
           </div>
         </div>
         <div className="layout right-contents-area">

@@ -26,7 +26,6 @@ const Notice = () => {
       .then((data) => {
         //실제 데이터를 상태변수에 업데이트
         setNoticeLists(data);
-        console.log(data);
       });
   }, []);
 
@@ -52,14 +51,16 @@ const Notice = () => {
           </div>
 
           {getPageData().map((it) => (
-            <NoticeTitle
-              onClick={() => {
-                navigate(`/notice/${it.id}`);
-              }}
-              title={it.title}
-              date={it.date}
-              key={it.id}
-            />
+            <div className="cursor-pointer">
+              <NoticeTitle
+                onClick={() => {
+                  navigate(`/notice/${it.id}`);
+                }}
+                title={it.title}
+                date={it.date}
+                key={it.id}
+              />{" "}
+            </div>
           ))}
         </div>
         <div className="flex justify-center">
@@ -68,6 +69,7 @@ const Notice = () => {
             color="primary"
             page={currentPage}
             onChange={handleChange}
+            sx={{ color: "#1C92FF" }}
           />
         </div>
       </div>
