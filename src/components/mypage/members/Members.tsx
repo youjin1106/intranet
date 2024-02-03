@@ -27,6 +27,7 @@ export const Members = () => {
         setUsers(data);
       });
   }, []);
+
   return (
     <div className="rounded p-4 bg-bg01 w-[400px] mt-[12px]">
       <div className="flex items-center justify-between mb-6">

@@ -1,9 +1,12 @@
-import {
+import React, {
   useEffect,
   useState,
 } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import {
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 
 import Pagination from '@mui/material/Pagination';
 
@@ -16,30 +19,41 @@ type NoticeModel = {
   content: string;
   date: string;
 };
+
 const Notice = () => {
   const [noticeLists, setNoticeLists] = useState<NoticeModel[]>([]);
-
   const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
-    fetch("http://localhost:3001/notice", { method: "GET" }) //메소드 방식 지정
-      .then((res) => res.json()) //json으로 받을 것을 명시
+    fetch("http://localhost:3001/notice", { method: "GET" })
+      .then((res) => res.json())
       .then((data) => {
-        //실제 데이터를 상태변수에 업데이트
         setNoticeLists(data);
       });
   }, []);
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(() => {
+    const urlParams = new URLSearchParams(location.search);
+    return parseInt(urlParams.get("page") || "1", 10);
+  });
+
   const itemsPerPage = 3;
   const count = Math.ceil(noticeLists.length / itemsPerPage);
+
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setCurrentPage(value);
+    const urlParams = new URLSearchParams(location.search);
+    urlParams.set("page", value.toString());
+    navigate(`?${urlParams.toString()}`, { replace: true });
   };
+
   const getPageData = () => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     return noticeLists.slice(startIndex, endIndex);
   };
+
   return (
     <div className="flex flex-col bg-bg00 flex-1 p-[24px]">
       <Header label="공지사항" />
@@ -51,14 +65,13 @@ const Notice = () => {
           </div>
 
           {getPageData().map((it) => (
-            <div className="cursor-pointer">
+            <div className="cursor-pointer" key={it.id}>
               <NoticeTitle
                 onClick={() => {
                   navigate(`/notice/${it.id}`);
                 }}
                 title={it.title}
                 date={it.date}
-                key={it.id}
               />{" "}
             </div>
           ))}
@@ -76,4 +89,5 @@ const Notice = () => {
     </div>
   );
 };
+
 export default Notice;
