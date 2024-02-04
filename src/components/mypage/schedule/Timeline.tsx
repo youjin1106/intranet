@@ -2,7 +2,7 @@ import { ApexOptions } from "apexcharts";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import Toggle from "./Toggle";
+import WorkingTimer from "./WorkingTimer";
 type Chart = {
   series: Array<WorkState>;
   options: ApexOptions;
@@ -42,7 +42,6 @@ const Timeline = () => {
       },
     ],
     ///////////////////////////////////////
-
     options: {
       chart: {
         width: "100%",
@@ -86,7 +85,7 @@ const Timeline = () => {
 
   const getSchedule = async () => {
     const copyState: Chart = JSON.parse(JSON.stringify(state));
-    const getData = await getTest("yj");
+    const getData = await getTest("yj"); //임시 유저
     getData.schedule.map((timeRecord: JsonUserScheduleData) => {
       const [startTime, endTime] = timeRecord.time.split(",");
       const filteredTimeRecord: TimeRange = {
@@ -111,16 +110,15 @@ const Timeline = () => {
   useEffect(() => {
     getSchedule();
   }, []);
-  // getSchedule();
 
   return (
     <>
       <div className="flex flex-row">
         <div className="text-titleMd text-gray00">근무 관리</div>
-        <Toggle />
         <div className="working flex flex-col">
-          <span className="text-primary text-sm font-bold ">근무 중</span>
-          <span className="text-gray01 text-[12px]">5:16:34</span>
+          {/* <span className="text-primary text-sm font-bold ">근무 중</span>
+          <span className="text-gray01 text-[12px]">5:16:34</span> */}
+          <WorkingTimer />
         </div>
       </div>
       <div id="chart">
