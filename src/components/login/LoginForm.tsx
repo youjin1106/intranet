@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "../../assets/logo.svg";
 import InputBox from "./InputBox";
+import PrimaryButton from "../buttons/PrimaryButton";
 
 interface LoginFormProps {
 	onLogin: (email: string, password: string) => void;
@@ -47,11 +48,7 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
 					onChange={onChangeFormData}
 				/>
 			</div>
-			<button
-				className="w-full text-white text-mdBold px-4 py-3 bg-primary hover:bg-primaryDark rounded-button inline-flex justify-center"
-				type="submit">
-				Login
-			</button>
+			<PrimaryButton label="Login" size="lg" />
 		</form>
 	);
 }
