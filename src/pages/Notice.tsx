@@ -1,23 +1,93 @@
+import React, {
+  useEffect,
+  useState,
+} from 'react';
+
+import {
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
+
+import Pagination from '@mui/material/Pagination';
+
+import Header from '../components/header/Header';
+import { NoticeTitle } from '../components/notice/Title';
+
+type NoticeModel = {
+  id: string;
+  title: string;
+  content: string;
+  date: string;
+};
+
 const Notice = () => {
-  fetch("http://localhost:3001/user", { method: "GET" }) //메소드 방식 지정
-    .then((res) => res.json()) //json으로 받을 것을 명시
-    .then((res) => {
-      //실제 데이터를 상태변수에 업데이트
-      console.log(1, res);
-    });
+  const [noticeLists, setNoticeLists] = useState<NoticeModel[]>([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    fetch("http://localhost:3001/notice", { method: "GET" })
+      .then((res) => res.json())
+      .then((data) => {
+        setNoticeLists(data);
+      });
+  }, []);
+
+  const [currentPage, setCurrentPage] = useState(() => {
+    const urlParams = new URLSearchParams(location.search);
+    return parseInt(urlParams.get("page") || "1", 10);
+  });
+
+  const itemsPerPage = 3;
+  const count = Math.ceil(noticeLists.length / itemsPerPage);
+
+  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setCurrentPage(value);
+    const urlParams = new URLSearchParams(location.search);
+    urlParams.set("page", value.toString());
+    navigate(`?${urlParams.toString()}`, { replace: true });
+  };
+
+  const getPageData = () => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return noticeLists.slice(startIndex, endIndex);
+  };
 
   return (
-    <div className="bg-bg00 flex-1 p-[24px]">
-      <div className="bg-bg01 p-[16px] text-titleLg rounded mb-[12px]">
-        공지사항
-      </div>
-      <div className="bg-bg01 p-[16px] rounded">
-        <div className="border order-indigo-600 flex justify-between px-[12px] py-[8px]">
-          <span className="text-mdBold">제목</span>
-          <span className="text-mdBold">등록일</span>
+    <div className="flex flex-col bg-bg00 flex-1 p-[24px]">
+      <Header label="공지사항" />
+      <div className="flex-1 flex flex-col justify-between bg-bg01 p-[16px] rounded">
+        <div>
+          <div className="border-solid border-y border-border order-indigo-600 flex justify-between px-[12px] py-[8px]">
+            <span className="text-mdBold">제목</span>
+            <span className="text-mdBold">등록일</span>
+          </div>
+
+          {getPageData().map((it) => (
+            <div className="cursor-pointer" key={it.id}>
+              <NoticeTitle
+                onClick={() => {
+                  navigate(`/notice/${it.id}`);
+                }}
+                title={it.title}
+                date={it.date}
+              />{" "}
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <Pagination
+            count={count}
+            color="primary"
+            page={currentPage}
+            onChange={handleChange}
+            sx={{ color: "#1C92FF" }}
+          />
         </div>
       </div>
     </div>
   );
 };
+
 export default Notice;

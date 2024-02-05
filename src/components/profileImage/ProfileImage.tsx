@@ -18,7 +18,7 @@ export const ProfileImage = ({ size, isOnline }: ProfileImageProps) => {
         />
       </div>
       <div
-        className={` rounded-[999px] overflow-hidden aspect-square absolute  right-0 ${
+        className={`border border-solid border-white rounded-[999px] overflow-hidden aspect-square absolute  right-0 ${
           size === "lg"
             ? "w-[24px] border-[4px] bottom-1.5"
             : "w-[14px] border-[2px] bottom-0"
