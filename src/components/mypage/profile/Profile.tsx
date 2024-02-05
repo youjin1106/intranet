@@ -59,7 +59,12 @@ export default function Profile() {
         <h2 className="text-titleMd text-gray00 font-bold ">프로필</h2>
         <div className="flex items-center gap-[4px]">
           <p className="text-gray00">상태:</p>
-          <SelectBox options={["온라인", "오프라인"]} size="md" />
+          <SelectBox
+            options={["온라인", "오프라인"]}
+            size="md"
+            selectedValue="전체"
+            onSelect={() => {}}
+          />
         </div>
       </div>
       <div className="flex flex-col items-center">

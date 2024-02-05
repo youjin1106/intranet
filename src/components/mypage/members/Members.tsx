@@ -35,7 +35,12 @@ export const Members = () => {
         <div>
           <div className="flex items-center">
             <span className="mr-1">보기:</span>
-            <SelectBox size="sm" options={["전체", "온라인", "오프라인"]} />
+            <SelectBox
+              size="sm"
+              options={["전체", "온라인", "오프라인"]}
+              selectedValue={"전체"}
+              onSelect={() => {}}
+            />
           </div>
         </div>
       </div>
