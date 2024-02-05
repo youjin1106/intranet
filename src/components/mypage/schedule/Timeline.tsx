@@ -115,11 +115,7 @@ const Timeline = () => {
     <>
       <div className="flex flex-row">
         <div className="text-titleMd text-gray00">근무 관리</div>
-        <div className="working flex flex-col">
-          {/* <span className="text-primary text-sm font-bold ">근무 중</span>
-          <span className="text-gray01 text-[12px]">5:16:34</span> */}
-          <WorkingTimer />
-        </div>
+        <WorkingTimer />
       </div>
       <div id="chart">
         <ReactApexChart

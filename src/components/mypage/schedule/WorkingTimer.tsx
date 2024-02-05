@@ -1,18 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import Toggle from "./Toggle";
+import dayjs from "dayjs";
+import { addChart } from "./ScheduleStore";
 
 const WorkingTimer = () => {
   const [hour, setHour] = useState(0);
   const [min, setMin] = useState(0);
   const [sec, setSec] = useState(0);
   const [toggleTimer, setToggleTimer] = useState(false);
-  const workingTimeRef = useRef<number>(0);
-  // const [start, setStart] = useState(0);
-  // const [end, setEnd] = useState(0);
+  const workingTimeRef = useRef(0);
+  const startRef = useRef("");
 
   useEffect(() => {
     if (toggleTimer) {
-      // setStart(Date.now());
+      const workStartTime = dayjs().format("HH:mm");
+      startRef.current = "";
+      startRef.current += workStartTime;
+      console.log(startRef);
       workingTimeRef.current = setInterval(() => {
         setSec((sec) => {
           if (sec === 59) {
@@ -30,6 +34,10 @@ const WorkingTimer = () => {
       }, 1000);
     } else if (!toggleTimer) {
       clearInterval(workingTimeRef.current);
+      const workEndTime = dayjs().format("HH:mm");
+      startRef.current += "," + workEndTime;
+      console.log(startRef, "end");
+      addChart("yj", "근무중", dayjs().format("YY-MM-DD"), startRef.current);
       // setEnd(Date.now());
     }
   }, [toggleTimer]);
@@ -37,16 +45,17 @@ const WorkingTimer = () => {
   return (
     <>
       <Toggle onChange={() => setToggleTimer(!toggleTimer)} />
-      {toggleTimer && (
-        <span className="text-primary text-sm font-bold ">근무중</span>
-      )}
-      {/* <button onClick={() => setToggleTimer(!toggleTimer)}>
-        {toggleTimer ? "stop" : "start"}
-      </button> */}
-      <span className="text-gray01 text-[12px]">
-        {hour < 10 ? `0${hour}` : hour}:{min < 10 ? `0${min}` : min}:
-        {sec < 10 ? `0${sec}` : sec}
-      </span>
+      <div className="working flex flex-col">
+        {toggleTimer ? (
+          <span className="text-primary text-sm font-bold ">근무중</span>
+        ) : (
+          <span className="text-gray01 text-sm font-bold ">퇴근</span>
+        )}
+        <span className="text-gray01 text-[12px]">
+          {hour < 10 ? `0${hour}` : hour}:{min < 10 ? `0${min}` : min}:
+          {sec < 10 ? `0${sec}` : sec}
+        </span>
+      </div>
     </>
   );
 };
