@@ -75,7 +75,11 @@ const TodoList = () => {
   return (
     <div>
       <PrimaryButton label="등록" size="md" onClick={addToDo} />
-      <InputBox label="할 일을 입력하세요." onChange={handleInputChange} />
+      <InputBox
+        type="textbox"
+        placeholder="할 일을 입력하세요."
+        onChange={handleInputChange}
+      />
       {todoList !== undefined ? (
         // 할 일이 존재하는 경우
         todoList.length > 0 ? (
