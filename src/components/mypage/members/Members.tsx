@@ -4,7 +4,7 @@ import {
 } from 'react';
 
 import SelectBox from '../../inputs/SelectBox';
-import { ProfileImage } from '../../profile/ProfileImage';
+import { ProfileImage } from '../../profileImage/ProfileImage';
 
 type MembersModel = {
   id: string;
