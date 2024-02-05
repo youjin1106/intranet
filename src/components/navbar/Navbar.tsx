@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="layout navbar">
+    <div className="navbar">
       <ul>
         <li>
           <Link to="/">마이페이지</Link>
