@@ -1,4 +1,5 @@
 import Header from '../components/header/Header';
+import SelectTest from '../components/inputs/SelectTest';
 import { Members } from '../components/mypage/members/Members';
 import NoticeSlide from '../components/mypage/notice-slide/NoticeSlide';
 import Profile from '../components/mypage/profile/Profile';
@@ -28,6 +29,7 @@ const Mypage = () => {
             <div className="layout todo-list">
               할 일 목록
               <TodoList />
+              <SelectTest />
             </div>
             <div className="dayoff-areas">
               <div className="layout dayoff-management">연차 관리</div>
