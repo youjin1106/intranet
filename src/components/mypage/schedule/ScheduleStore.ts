@@ -1,15 +1,12 @@
 import { atom } from "jotai";
 
-const sec = atom(0);
-const urlAtom = atom("http://localhost:3001/schedules");
-
-type Schedule = {
+export type Schedule = {
   state: string;
   date: string;
   time: string;
 };
 
-const getTest = async (id: string) => {
+export const getSchedules = async (id: string) => {
   const response = await fetch(`http://localhost:3001/schedules/${id}`).then(
     (res) => res.json()
   );
@@ -28,7 +25,7 @@ export const addChart = async (
     time: time,
   };
 
-  const beforeChart = await getTest(id);
+  const beforeChart = await getSchedules(id);
   const newSchedules = [...beforeChart.schedule, schedule];
   try {
     const response = await fetch("http://localhost:3001/schedules", {

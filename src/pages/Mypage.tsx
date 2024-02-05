@@ -4,6 +4,7 @@ import { ProfileImage } from "../components/profile/ProfileImage";
 import Header from "../components/header/Header";
 import NoticeSlide from "../components/mypage/notice-slide/NoticeSlide";
 import Profile from "../components/mypage/profile/Profile";
+import DayoffManager from "../components/mypage/dayoff/DayoffManager";
 
 const Mypage = () => {
   return (
@@ -35,7 +36,9 @@ const Mypage = () => {
               <TodoList />
             </div>
             <div className="dayoff-areas">
-              <div className="layout dayoff-management">연차 관리</div>
+              <div className="layout dayoff-management">
+                <DayoffManager />
+              </div>
               <div className="layout dayoff-approval">연차 신청 내역</div>
             </div>
           </div>

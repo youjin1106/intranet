@@ -16,7 +16,6 @@ const WorkingTimer = () => {
       const workStartTime = dayjs().format("HH:mm");
       startRef.current = "";
       startRef.current += workStartTime;
-      console.log(startRef);
       workingTimeRef.current = setInterval(() => {
         setSec((sec) => {
           if (sec === 59) {
@@ -36,9 +35,7 @@ const WorkingTimer = () => {
       clearInterval(workingTimeRef.current);
       const workEndTime = dayjs().format("HH:mm");
       startRef.current += "," + workEndTime;
-      console.log(startRef, "end");
       addChart("yj", "근무중", dayjs().format("YY-MM-DD"), startRef.current);
-      // setEnd(Date.now());
     }
   }, [toggleTimer]);
 

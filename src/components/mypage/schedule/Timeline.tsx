@@ -75,7 +75,7 @@ const Timeline = () => {
     },
   };
 
-  const getTest = async (id: string) => {
+  const getSchedules = async (id: string) => {
     const response = await fetch(`http://localhost:3001/schedules/${id}`).then(
       (res) => res.json()
     );
@@ -85,7 +85,7 @@ const Timeline = () => {
 
   const getSchedule = async () => {
     const copyState: Chart = JSON.parse(JSON.stringify(state));
-    const getData = await getTest("yj"); //임시 유저
+    const getData = await getSchedules("yj"); //임시 유저
     getData.schedule.map((timeRecord: JsonUserScheduleData) => {
       const [startTime, endTime] = timeRecord.time.split(",");
       const filteredTimeRecord: TimeRange = {
@@ -114,7 +114,7 @@ const Timeline = () => {
   return (
     <>
       <div className="flex flex-row">
-        <div className="text-titleMd text-gray00">근무 관리</div>
+        <div className="text-titleMd text-gray00 font-bold">근무 관리</div>
         <WorkingTimer />
       </div>
       <div id="chart">
