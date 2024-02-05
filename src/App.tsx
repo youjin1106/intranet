@@ -1,7 +1,12 @@
 import './App.css';
 
 import {
+  atom,
+  useAtom,
+} from 'jotai';
+import {
   BrowserRouter,
+  Navigate,
   Route,
   Routes,
 } from 'react-router-dom';
@@ -12,14 +17,24 @@ import Login from './pages/Login';
 import Mypage from './pages/Mypage';
 import Notice from './pages/Notice';
 
+export const isLoggedInAtom = atom<boolean>(
+  sessionStorage.getItem("isLoggedIn") === "true"
+);
 function App() {
+  const [isLoggedIn] = useAtom(isLoggedInAtom);
   return (
     <BrowserRouter>
       <div className="main-display">
-        <Navbar />
+        {isLoggedIn && <Navbar />}
         <Routes>
-          <Route path="/" element={<Mypage />} />
-          <Route path="/notice" element={<Notice />} />
+          <Route
+            path="/"
+            element={isLoggedIn ? <Mypage /> : <Navigate to={"/login"} />}
+          />
+          <Route
+            path="/notice"
+            element={isLoggedIn ? <Notice /> : <Navigate to="/login" />}
+          />
           <Route path="/notice/:noticeId" element={<NoticeDetail />} />
           <Route path="/login" element={<Login />} />
         </Routes>

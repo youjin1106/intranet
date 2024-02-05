@@ -1,47 +1,50 @@
-.layout {
-  border: 2px solid rgb(154, 171, 202);
-}
 .main-display {
-  display: flex;
+	background-color: #f0f2f5;
+	display: flex;
+}
+
+.container {
+	width: 100%;
+	padding: 10px;
+}
+
+.layout {
+	background-color: #fff;
+	border-radius: 16px;
+	margin: 10px;
 }
 
 .navbar {
-  width: 20vw;
-  height: 100vh;
+	background-color: #fff;
+	width: 20vw;
+	height: 100vh;
 }
 
 .contents-areas {
-  display: flex;
-  width: 80vw;
+	display: flex;
 }
 
-.profile {
-  width: 200px;
-  height: 200px;
-}
-
+.profile,
 .members {
-  height: 270px;
+	width: 400px;
 }
 
-.schedule {
-  width: 850px;
-  height: 190px;
+.right-contents-area {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 
 .right-bottom-area {
-  display: flex;
+	display: flex;
 }
 
 .todo-list {
-  width: 350px;
-  height: 200px;
+	width: 528px;
 }
 
-.dayoff-management {
-  height: 100px;
-}
-
-.dayoff-approval {
-  height: 100px;
+.dayoff-areas {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
