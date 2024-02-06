@@ -44,19 +44,20 @@ const Timeline = () => {
     ///////////////////////////////////////
     options: {
       chart: {
-        width: "100%",
-        height: 400,
         type: "rangeBar",
         toolbar: {
           show: false,
         },
       },
-      colors: ["#546E7A", "#E91E63", "#FF9800"],
+      colors: ["#3DA5F5", "#B3DB00", "#FF9800"],
       plotOptions: {
         bar: {
           horizontal: true,
           barHeight: "40%",
           rangeBarGroupRows: true,
+          dataLabels: {
+            position: "bottom",
+          },
         },
       },
       xaxis: {
@@ -70,7 +71,14 @@ const Timeline = () => {
       },
       fill: {
         type: "solid",
-        opacity: 0.6,
+        opacity: 0.7,
+      },
+      legend: {
+        position: "top",
+        floating: true,
+        itemMargin: {
+          horizontal: 6,
+        },
       },
     },
   };
@@ -112,20 +120,24 @@ const Timeline = () => {
   }, []);
 
   return (
-    <>
+    <div className="h-[290px] w-[820px]">
       <div className="flex flex-row">
-        <div className="text-titleMd text-gray00 font-bold">근무 관리</div>
+        <div className="text-titleMd text-gray00 font-bold m-2 ml-3 mt-2">
+          근무 관리
+        </div>
         <WorkingTimer />
       </div>
-      <div id="chart">
+      <div className="chart h-[270px]">
         <ReactApexChart
           options={state.options}
           series={chart.series}
           type="rangeBar"
-          height={220}
+          width="100%"
+          height="100%"
+          className="relative top-[-30px]"
         />
       </div>
-    </>
+    </div>
   );
 };
 

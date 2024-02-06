@@ -29,7 +29,7 @@ const Mypage = () => {
             </div>
           </div>
           <div className="right-contents-area">
-            <div className="layout schedule">
+            <div className="layout schedule w-[820px]">
               <Timeline />
             </div>
             <div className="right-bottom-area">
@@ -37,7 +37,7 @@ const Mypage = () => {
                 <TodoList />
               </div>
               <div className="dayoff-areas">
-                <div className="layout dayoff-management">
+                <div className="layout dayoff-management w-[400px] bg-gray01">
                   <DayoffManager />
                 </div>
                 <div className="layout dayoff-approval"> </div>
