@@ -55,7 +55,7 @@ const Notice = () => {
   };
 
   return (
-    <div className="flex flex-col bg-bg00 flex-1 p-[24px]">
+    <div className="h-lvh flex flex-col bg-bg00 flex-1 p-[24px]">
       <Header label="공지사항" />
       <div className="flex-1 flex flex-col justify-between bg-bg01 p-[16px] rounded">
         <div>
@@ -82,7 +82,7 @@ const Notice = () => {
             color="primary"
             page={currentPage}
             onChange={handleChange}
-            sx={{ color: "#1C92FF" }}
+            className="pagination"
           />
         </div>
       </div>

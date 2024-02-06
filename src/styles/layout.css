@@ -49,3 +49,6 @@
   flex-direction: column;
   flex-grow: 1;
 }
+.Mui-selected {
+  background-color: #1c92ff !important ;
+}
