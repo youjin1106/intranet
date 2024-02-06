@@ -1,8 +1,6 @@
 import { useAtom } from "jotai";
 import { modalAtom } from "./atoms";
 import IconButton from "../buttons/IconButton";
-import ModalCaseA from "./DayOff";
-import ModalCaseB from "./HalfDayOff";
 import CreateTodo from "./CreateTodo";
 
 // Modal 컴포넌트 정의
@@ -26,8 +24,6 @@ const Modal = () => {
         <div className="absolute top-3 right-3">
           <IconButton iconName={"close"} onClick={closeModal} />
         </div>
-        {content === "DayOff" && <ModalCaseA />}
-        {content === "HalfDayOff" && <ModalCaseB />}
         {content === "openModalCreateTodo" && <CreateTodo />}
       </div>
     </div>
