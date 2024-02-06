@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import PrimaryButton from "../../buttons/PrimaryButton";
 import { getSchedules } from "../schedule/ScheduleStore";
 import { Schedule } from "../schedule/ScheduleStore";
+import dayjs from "dayjs";
 
 const DayoffManager = () => {
-  const dayoffRecord = () => {};
-
   const [dayoffList1, setDayoffList] = useState();
+  const [dDay, setDDay] = useState(0);
 
   const dayoffList = async () => {
     const allList = await getSchedules("yj");
@@ -20,7 +19,18 @@ const DayoffManager = () => {
   };
   useEffect(() => {
     dayoffList();
+    dDaySet();
   }, []);
+
+  const dDaySet = () => {
+    const now = dayjs();
+    const currentYear = now.get("y");
+    // const today = now.format("YYYY-MM-DD HH:mm");
+    const lastDate = dayjs(currentYear + "-12-31");
+
+    const dayDiff = lastDate.diff(now, "day");
+    setDDay(dayDiff);
+  };
 
   return (
     <div>
@@ -28,10 +38,9 @@ const DayoffManager = () => {
         <div className="flex flex-row items-center">
           <div className="text-titleMd text-gray00 font-bold">연차 관리</div>
           <div className="pl-3">
-            남은 연차 : <span>5.5</span>일 (<span>281</span>일 후 소멸)
+            남은 연차 : <span>5.5</span>일 (<span>{dDay}</span>일 후 소멸)
           </div>
         </div>
-        <PrimaryButton label="내역" size="md" onClick={dayoffRecord} />
       </div>
       <ul></ul>
       <table className="table-auto">

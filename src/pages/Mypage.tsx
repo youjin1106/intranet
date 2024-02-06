@@ -1,11 +1,11 @@
-import Header from '../components/header/Header';
-import SelectTest from '../components/inputs/SelectTest';
-import DayoffManager from '../components/mypage/dayoff/DayoffManager';
-import { Members } from '../components/mypage/members/Members';
-import NoticeSlide from '../components/mypage/notice-slide/NoticeSlide';
-import Profile from '../components/mypage/profile/Profile';
-import Timeline from '../components/mypage/schedule/Timeline';
-import TodoList from '../components/mypage/todolist/TodoList';
+import Header from "../components/header/Header";
+import SelectTest from "../components/inputs/SelectTest";
+import DayoffManager from "../components/mypage/dayoff/DayoffManager";
+import { Members } from "../components/mypage/members/Members";
+import NoticeSlide from "../components/mypage/notice-slide/NoticeSlide";
+import Profile from "../components/mypage/profile/Profile";
+import Timeline from "../components/mypage/schedule/Timeline";
+import TodoList from "../components/mypage/todolist/TodoList";
 
 const Mypage = () => {
   return (
@@ -26,7 +26,7 @@ const Mypage = () => {
           </div>
         </div>
         <div className="right-contents-area">
-          <div className="layout schedule">
+          <div className="layout schedule w-[820px]">
             <Timeline />
           </div>
           <div className="right-bottom-area">

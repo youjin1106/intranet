@@ -42,13 +42,13 @@ const WorkingTimer = () => {
   return (
     <>
       <Toggle onChange={() => setToggleTimer(!toggleTimer)} />
-      <div className="working flex flex-col">
+      <div className="working flex flex-col mt-2">
         {toggleTimer ? (
           <span className="text-primary text-sm font-bold ">근무중</span>
         ) : (
           <span className="text-gray01 text-sm font-bold ">퇴근</span>
         )}
-        <span className="text-gray01 text-[12px]">
+        <span className="text-gray01 text-[12px] relative top-[-6px]">
           {hour < 10 ? `0${hour}` : hour}:{min < 10 ? `0${min}` : min}:
           {sec < 10 ? `0${sec}` : sec}
         </span>
