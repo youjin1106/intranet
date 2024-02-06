@@ -55,9 +55,11 @@ const Notice = () => {
   };
 
   return (
-    <div className="flex flex-col bg-bg00 flex-1 p-[24px]">
-      <Header label="공지사항" />
-      <div className="flex-1 flex flex-col justify-between bg-bg01 p-[16px] rounded">
+    <div className="h-lvh flex flex-col bg-bg00 flex-1 p-[24px]">
+      <div className="layout header rounded">
+        <Header label="공지사항" />
+      </div>
+      <div className="mx-[10px] flex-1 flex flex-col justify-between bg-bg01 p-[16px] rounded">
         <div>
           <div className="border-solid border-y border-border order-indigo-600 flex justify-between px-[12px] py-[8px]">
             <span className="text-mdBold">제목</span>
@@ -82,7 +84,7 @@ const Notice = () => {
             color="primary"
             page={currentPage}
             onChange={handleChange}
-            sx={{ color: "#1C92FF" }}
+            className="pagination"
           />
         </div>
       </div>
