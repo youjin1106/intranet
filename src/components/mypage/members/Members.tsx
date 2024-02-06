@@ -63,7 +63,7 @@ export const Members = () => {
   return (
     <div className="rounded p-4 bg-bg01 w-[400px] mt-[12px]">
       <div className="flex items-center justify-between mb-6">
-        <span className="text-titleMd">멤버</span>
+        <h2 className="font-bold text-titleMd text-gray00">멤버</h2>
         <div>
           <div className="flex items-center">
             <span className="mr-1">보기:</span>

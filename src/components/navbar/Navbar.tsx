@@ -30,17 +30,20 @@ const Navbar = () => {
           LOGO
         </p>
         <ul>
-          <li className="flex gap-2 py-2">
-            <PersonOutlineOutlinedIcon className={`${isMain} text-gray01`} />
-            <Link className={`${isMain} text-lg`} to="/">
+          <li>
+            <Link className={`${isMain} text-lg flex gap-2 py-2`} to="/">
+              <PersonOutlineOutlinedIcon className={`${isMain} text-gray01`} />
               마이페이지
             </Link>
           </li>
-          <li className="flex gap-2 py-2">
-            <NotificationsActiveOutlinedIcon
-              className={`${isNotice} text-gray01`}
-            />
-            <Link className={`${isNotice} text-lg`} to="/notice">
+          <li>
+            <Link
+              className={`${isNotice} text-lg flex gap-2 py-2`}
+              to="/notice"
+            >
+              <NotificationsActiveOutlinedIcon
+                className={`${isNotice} text-gray01`}
+              />
               공지사항
             </Link>
           </li>
