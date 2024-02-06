@@ -1,12 +1,11 @@
-import Header from "../components/header/Header";
-import Modal from "../components/modal/Modal";
-import DayoffManager from "../components/mypage/dayoff/DayoffManager";
-import DayOffHistory from "../components/mypage/dayoffhistory/DayOffHistory";
-import { Members } from "../components/mypage/members/Members";
-import NoticeSlide from "../components/mypage/notice-slide/NoticeSlide";
-import Profile from "../components/mypage/profile/Profile";
-import Timeline from "../components/mypage/schedule/Timeline";
-import TodoList from "../components/mypage/todolist/TodoList";
+import Header from '../components/header/Header';
+import Modal from '../components/modal/Modal';
+import DayoffManager from '../components/mypage/dayoff/DayoffManager';
+import { Members } from '../components/mypage/members/Members';
+import NoticeSlide from '../components/mypage/notice-slide/NoticeSlide';
+import Profile from '../components/mypage/profile/Profile';
+import Timeline from '../components/mypage/schedule/Timeline';
+import TodoList from '../components/mypage/todolist/TodoList';
 
 const Mypage = () => {
   return (

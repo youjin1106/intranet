@@ -1,7 +1,8 @@
-import { useAtom } from "jotai";
-import { modalAtom } from "./atoms";
-import IconButton from "../buttons/IconButton";
-import CreateTodo from "./CreateTodo";
+import { useAtom } from 'jotai';
+
+import IconButton from '../buttons/IconButton';
+import { modalAtom } from './atoms';
+import CreateTodo from './CreateTodo';
 
 // Modal 컴포넌트 정의
 const Modal = () => {

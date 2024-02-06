@@ -30,8 +30,9 @@ export default function Header({ label }: TitleProps) {
   }, []);
 
   return (
-    <header className="p-[16px] flex justify-between items-center">
+    <header className=" p-[16px] flex justify-between items-center">
       <h1 className="text-titleLg font-bold text-gray00">{label}</h1>
+
       <div className="flex flex-col items-end">
         <p className="text-lg font-medium">{clock}</p>
         <span className="text-s text-gray01">{date}</span>
