@@ -30,7 +30,7 @@ const DayoffManager = () => {
   };
 
   return (
-    <div>
+    <div className="w-[400px] bg-bg01 rounded">
       <div className="flex flex-row  justify-between">
         <div className="flex flex-row items-center">
           <div className="text-titleMd text-gray00  font-bold m-2 ml-3 mt-2">
