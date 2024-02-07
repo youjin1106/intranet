@@ -12,7 +12,7 @@ const Mypage = () => {
   return (
     <>
       <Modal />
-      <div className="h-lvh p-[24px] flex flex-col gap-[10px] flex-1 bg-bg00">
+      <div className="h-full p-[24px] flex flex-col gap-[10px] flex-1 bg-bg00">
         <Header label={"마이페이지"} />
         <NoticeSlide />
         <div className="flex gap-[10px]">

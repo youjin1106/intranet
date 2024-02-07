@@ -76,7 +76,7 @@ export const Members = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-3 h-[120px] overflow-scroll">
+      <div className="flex flex-col gap-3">
         {users.map((it) => (
           <div key={it.id} className="flex gap-4">
             <ProfileImage
