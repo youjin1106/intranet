@@ -4,30 +4,27 @@ import { Schedule } from "../schedule/ScheduleStore";
 import dayjs from "dayjs";
 
 const DayoffManager = () => {
-  const [dayoffList1, setDayoffList] = useState();
+  const [dayoffList, setDayoffList] = useState();
   const [dDay, setDDay] = useState(0);
 
-  const dayoffList = async () => {
+  const getDayoffList = async () => {
     const allList = await getSchedules("yj");
     const filteredList = allList.schedule
       .map((schedule: Schedule) => {
         if (schedule.state !== "근무중") return schedule;
       })
       .filter((data) => data !== undefined);
-    console.log(filteredList);
     setDayoffList(filteredList);
   };
   useEffect(() => {
-    dayoffList();
+    getDayoffList();
     dDaySet();
   }, []);
 
   const dDaySet = () => {
     const now = dayjs();
     const currentYear = now.get("y");
-    // const today = now.format("YYYY-MM-DD HH:mm");
     const lastDate = dayjs(currentYear + "-12-31");
-
     const dayDiff = lastDate.diff(now, "day");
     setDDay(dayDiff);
   };
@@ -56,8 +53,8 @@ const DayoffManager = () => {
           </tr>
         </thead>
         <tbody>
-          {dayoffList1 &&
-            dayoffList1.map(({ state, date, time }) => (
+          {dayoffList &&
+            dayoffList.map(({ state, date, time }) => (
               <tr key={date + time}>
                 <td className="border-b font-medium p-4 pr-10 pl-8 text-center">
                   {date}

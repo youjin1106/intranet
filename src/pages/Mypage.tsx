@@ -37,7 +37,7 @@ const Mypage = () => {
                 <TodoList />
               </div>
               <div className="dayoff-areas">
-                <div className="layout dayoff-management w-[400px] bg-gray01">
+                <div className="layout dayoff-management w-[400px] bg-white">
                   <DayoffManager />
                 </div>
                 <div className="layout dayoff-approval"> </div>
