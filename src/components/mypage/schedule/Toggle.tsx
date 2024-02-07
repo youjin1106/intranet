@@ -1,4 +1,8 @@
-const Toggle = ({ onChange }) => {
+import React from "react";
+interface ToggleProps {
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+}
+const Toggle: React.FC<ToggleProps> = ({ onChange }) => {
   return (
     <input
       type="checkbox"

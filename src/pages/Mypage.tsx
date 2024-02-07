@@ -8,27 +8,27 @@ import Timeline from "../components/mypage/schedule/Timeline";
 import TodoList from "../components/mypage/todolist/TodoList";
 
 const Mypage = () => {
-	return (
-		<>
-			<Modal />
-			<div className="h-lvh p-[24px] flex flex-col gap-[10px] flex-1 bg-bg00">
-				<Header label={"마이페이지"} />
-				<NoticeSlide />
-				<div className="flex gap-[10px]">
-					<div>
-						<Profile />
-						<Members />
-					</div>
-					<div className="w-full flex flex-col gap-[10px]">
-						<Timeline />
-						<div className="flex gap-[10px]">
-							<TodoList />
-							<DayoffManager />
-						</div>
-					</div>
-				</div>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <Modal />
+      <div className="h-lvh p-[24px] flex flex-col gap-[10px] flex-1 bg-bg00">
+        <Header label={"마이페이지"} />
+        <NoticeSlide />
+        <div className="flex gap-[10px]">
+          <div>
+            <Profile />
+            <Members />
+          </div>
+          <div className="w-full flex flex-col gap-[10px]">
+            <Timeline />
+            <div className="flex gap-[10px]">
+              <TodoList />
+              <DayoffManager />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 export default Mypage;
