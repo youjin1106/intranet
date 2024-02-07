@@ -12,6 +12,7 @@ import PersonOutlineOutlinedIcon
 
 import { isLoggedInAtom } from '../../App';
 import GrayButton from '../buttons/GrayButton';
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   3;
@@ -33,9 +34,9 @@ const Navbar = () => {
           onClick={() => {
             navigate("/");
           }}
-          className="cursor-pointer rounded flex items-center justify-center mb-2 h-[80px] bg-bg00 "
+          className="cursor-pointer rounded flex items-center justify-center mb-2"
         >
-          LOGO
+          <img className="w-[80px] h-[80px]" src={logo} alt="logo" />
         </p>
         <ul>
           <li>
