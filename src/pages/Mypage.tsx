@@ -1,6 +1,7 @@
 import Header from "../components/header/Header";
 import Modal from "../components/modal/Modal";
 import DayoffManager from "../components/mypage/dayoff/DayoffManager";
+import DayOffHistory from "../components/mypage/dayoffhistory/DayOffHistory";
 import { Members } from "../components/mypage/members/Members";
 import NoticeSlide from "../components/mypage/notice-slide/NoticeSlide";
 import Profile from "../components/mypage/profile/Profile";
@@ -23,7 +24,10 @@ const Mypage = () => {
             <Timeline />
             <div className="flex gap-[10px]">
               <TodoList />
-              <DayoffManager />
+              <div className="flex flex-col grow gap-[10px]">
+                <DayoffManager />
+                <DayOffHistory />
+              </div>
             </div>
           </div>
         </div>

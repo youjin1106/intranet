@@ -52,7 +52,7 @@ const DayOffHistory = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 bg-bg01 rounded">
       <div className="flex justify-between mb-4">
         <h2 className="text-titleMd text-gray00 font-bold ">연차 신청</h2>
         <div className="flex gap-2">
