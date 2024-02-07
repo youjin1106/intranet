@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import InputBox from "./InputBox";
 import PrimaryButton from "../buttons/PrimaryButton";
 
@@ -27,10 +27,10 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
 
 	return (
 		<form
-			className="w-[484px] h-[432px] bg-white p-10 rounded flex flex-col justify-around gap-[64px]"
+			className="w-[484px] h-[432px] bg-white p-10 rounded flex flex-col justify-around gap-[50px]"
 			onSubmit={handleSubmit}>
-			<h1 className="logo">
-				<img src={logo} alt="logo" />
+			<h1 className="w-full flex justify-center">
+				<img className="w-[100px] h-[100px]" src={logo} alt="logo" />
 			</h1>
 			<div className="flex flex-col gap-[16px]">
 				<InputBox
