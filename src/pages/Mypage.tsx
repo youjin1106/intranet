@@ -40,7 +40,9 @@ const Mypage = () => {
                 <div className="layout dayoff-management">
                   <DayoffManager />
                 </div>
-                <div className="layout dayoff-approval"> </div>
+                <div className="layout dayoff-approval">
+                  <DayOffHistory />
+                </div>
               </div>
             </div>
           </div>
