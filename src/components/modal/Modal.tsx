@@ -1,8 +1,10 @@
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 
-import IconButton from '../buttons/IconButton';
-import { modalAtom } from './atoms';
-import CreateTodo from './CreateTodo';
+import IconButton from "../buttons/IconButton";
+import { modalAtom } from "./atoms";
+import CreateTodo from "./CreateTodo";
+import DayOff from "./DayOff";
+import HalfDayOff from "./HalfDayOff";
 
 // Modal 컴포넌트 정의
 const Modal = () => {
@@ -18,13 +20,15 @@ const Modal = () => {
   // 모달이 열린 경우에만 화면에 나타나도록 스타일 설정
   return (
     <div
-      className="fixed w-screen h-screen bg-[#000000]/80 z-10 flex justify-center items-center"
+      className="fixed w-screen h-screen bg-[#000000]/80 z-20 flex justify-center items-center"
       style={{ display: isOpen ? "flex" : "none" }}
     >
       <div className="relative w-[440px] bg-white rounded p-4 flex flex-col gap-y-6">
         <div className="absolute top-3 right-3">
           <IconButton iconName={"close"} onClick={closeModal} />
         </div>
+        {content === "DayOff" && <DayOff />}
+        {content === "HalfDayOff" && <HalfDayOff />}
         {content === "openModalCreateTodo" && <CreateTodo />}
       </div>
     </div>
