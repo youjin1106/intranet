@@ -120,7 +120,7 @@ const Timeline = () => {
   }, []);
 
   return (
-    <div className="h-[290px] w-[820px]">
+    <div className="w-full h-[290px] bg-bg01 rounded">
       <div className="flex flex-row">
         <div className="text-titleMd text-gray00 font-bold m-2 ml-3 mt-2">
           근무 관리
