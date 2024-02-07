@@ -1,5 +1,3 @@
-import { atom } from "jotai";
-
 export type Schedule = {
   state: string;
   date: string;
@@ -25,7 +23,7 @@ export const addChart = async (
     time: time,
   };
 
-  const beforeChart = await getSchedules(id);
+  const beforeChart = await getSchedules(id); //목업서버 POST 요청의 한계
   const newSchedules = [...beforeChart.schedule, schedule];
   try {
     const response = await fetch("http://localhost:3001/schedules", {
@@ -39,9 +37,6 @@ export const addChart = async (
     if (!response.ok) {
       throw new Error(`Failed to add schedule. Status: ${response.status}`);
     }
-
-    const result = await response.json();
-    console.log("Schedule added successfully:", result);
   } catch (error) {
     console.error("Error adding schedule:", error.message);
   }

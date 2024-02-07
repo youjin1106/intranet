@@ -1,5 +1,3 @@
-import './App.css';
-
 import {
   atom,
   useAtom,
@@ -24,7 +22,7 @@ function App() {
   const [isLoggedIn] = useAtom(isLoggedInAtom);
   return (
     <BrowserRouter>
-      <div className="main-display">
+      <div className="flex">
         {isLoggedIn && <Navbar />}
         <Routes>
           <Route

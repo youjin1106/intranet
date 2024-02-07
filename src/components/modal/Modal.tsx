@@ -1,8 +1,7 @@
 import { useAtom } from "jotai";
-import { modalAtom } from "./atoms";
+
 import IconButton from "../buttons/IconButton";
-import DayOff from "./DayOff";
-import HalfDayOff from "./HalfDayOff";
+import { modalAtom } from "./atoms";
 import CreateTodo from "./CreateTodo";
 
 // Modal 컴포넌트 정의

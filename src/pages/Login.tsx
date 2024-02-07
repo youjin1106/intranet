@@ -9,7 +9,7 @@ type User = {
 };
 
 export default function Login() {
-	const [isLoggedIn, setIsLoggedIn] = useAtom(isLoggedInAtom);
+	const [ , setIsLoggedIn] = useAtom(isLoggedInAtom);
 	const navigate = useNavigate();
 
 	const handleLogin = async (email: string, password: string) => {
