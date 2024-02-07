@@ -1,6 +1,6 @@
 import { ApexOptions } from "apexcharts";
 import dayjs from "dayjs";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import WorkingTimer from "./WorkingTimer";
 type Chart = {
@@ -141,4 +141,4 @@ const Timeline = () => {
   );
 };
 
-export default Timeline;
+export default React.memo(Timeline);
