@@ -26,7 +26,7 @@ export default function NoticeSlide() {
 	}, []);
 
 	return (
-		<div className="h-[56px] p-[16px] flex gap-[8px] text-gray00">
+		<div className="bg-bg01 h-[56px] p-[16px] flex gap-[8px] text-gray00 rounded">
 			<span className="material-symbols-outlined">notifications_active</span>
 			<Swiper
 				className="overflow-hidden"

@@ -65,7 +65,7 @@ export default function Profile() {
 	};
 
 	return (
-		<div className="w-[400px] p-[16px] flex flex-col justify-around gap-[16px]">
+		<div className="w-[400px] p-[16px] flex flex-col justify-around gap-[16px] bg-bg01 rounded">
 			<div className="flex justify-between">
 				<h2 className="text-titleMd text-gray00 font-bold ">프로필</h2>
 				<div className="flex items-center gap-[4px]">
