@@ -19,7 +19,7 @@ const DayoffManager = () => {
       .map((schedule: Schedule) => {
         if (schedule.state !== "근무중") return schedule;
       })
-      .filter((data) => data !== undefined);
+      .filter((data: Schedule | null): data is Schedule => data !== null);
     setDayoffList(filteredList);
   };
   useEffect(() => {
