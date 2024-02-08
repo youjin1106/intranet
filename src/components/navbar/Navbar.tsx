@@ -11,8 +11,8 @@ import PersonOutlineOutlinedIcon
   from '@mui/icons-material/PersonOutlineOutlined';
 
 import { isLoggedInAtom } from '../../App';
+import logo from '../../assets/logo.png';
 import GrayButton from '../buttons/GrayButton';
-import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   3;
@@ -21,7 +21,9 @@ const Navbar = () => {
   const location = useLocation();
   const isMain = location.pathname === "/" ? "text-primary" : "text-gray01";
   const isNotice =
-    location.pathname === "/notice" ? "text-primary" : "text-gray01";
+    location.pathname === "/notice" || location.pathname.startsWith("/notice/")
+      ? "text-primary"
+      : "text-gray01";
 
   const handelLogout = () => {
     setIsLoggedIn(false);

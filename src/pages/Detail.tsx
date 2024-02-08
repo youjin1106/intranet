@@ -39,7 +39,9 @@ export const NoticeDetail = () => {
         <div>
           <div className="h-[1px] bg-border"></div>
           <NoticeTitle title={notice.title} date={notice.date} />
-          <div className="py-4 px-3 text-gray00">{notice.content}</div>
+          <div className="whitespace-break-spaces py-4 px-3 text-gray00">
+            {notice.content}
+          </div>
         </div>
         <div className="flex justify-center">
           <GrayButton
