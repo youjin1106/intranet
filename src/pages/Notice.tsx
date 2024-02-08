@@ -48,7 +48,6 @@ const Notice = () => {
 		return noticeLists.slice(startIndex, endIndex);
 	};
 
-	return (
 		<div className="h-lvh flex flex-col gap-[10px] bg-bg00 flex-1 p-[24px]">
 			<Header label="공지사항" />
 			<div className="flex-1 flex flex-col justify-between bg-bg01 p-[16px] rounded">
