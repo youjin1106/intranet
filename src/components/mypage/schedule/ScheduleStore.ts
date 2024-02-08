@@ -25,19 +25,15 @@ export const addChart = async (
 
   const beforeChart = await getSchedules(id); //목업서버 POST 요청의 한계
   const newSchedules = [...beforeChart.schedule, schedule];
-  try {
-    const response = await fetch("http://localhost:3001/schedules", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-      },
-      body: JSON.stringify({ id, schedule: newSchedules }),
-    });
+  const response = await fetch("http://localhost:3001/schedules", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+    body: JSON.stringify({ id, schedule: newSchedules }),
+  });
 
-    if (!response.ok) {
-      throw new Error(`Failed to add schedule. Status: ${response.status}`);
-    }
-  } catch (error) {
-    console.error("Error adding schedule:", error.message);
+  if (!response.ok) {
+    throw new Error(`Failed to add schedule. Status: ${response.status}`);
   }
 };
