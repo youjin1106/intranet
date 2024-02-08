@@ -57,7 +57,7 @@ const Notice = () => {
 
   return (
     <div className="h-lvh flex flex-col gap-[10px] bg-bg00 flex-1 p-[24px]">
-      <Header label="공지사항" />
+      <Header label="공지 사항" />
       <div className="flex-1 flex flex-col justify-between bg-bg01 p-[16px] rounded">
         <div>
           <div className="border-solid border-y border-border order-indigo-600 flex justify-between px-[12px] py-[8px]">
