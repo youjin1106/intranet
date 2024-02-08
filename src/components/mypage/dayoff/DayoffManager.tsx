@@ -3,8 +3,14 @@ import { getSchedules } from "../schedule/ScheduleStore";
 import { Schedule } from "../schedule/ScheduleStore";
 import dayjs from "dayjs";
 
+type DayoffItem = {
+  state: string;
+  date: string;
+  time: string;
+};
+
 const DayoffManager = () => {
-  const [dayoffList, setDayoffList] = useState();
+  const [dayoffList, setDayoffList] = useState<DayoffItem[]>([]);
   const [dDay, setDDay] = useState(0);
 
   const getDayoffList = async () => {
