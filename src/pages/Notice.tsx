@@ -46,7 +46,7 @@ const Notice = () => {
     const urlParams = new URLSearchParams(location.search);
     urlParams.set("page", value.toString());
     navigate(`?${urlParams.toString()}`, { replace: true });
-    console.log(event);
+    console.log("event", event);
   };
 
   const getPageData = () => {
