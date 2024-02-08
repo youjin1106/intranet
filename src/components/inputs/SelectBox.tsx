@@ -1,8 +1,4 @@
-import React, {
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 // 셀렉트박스 타입 정의
 type SelectBoxProps = {
